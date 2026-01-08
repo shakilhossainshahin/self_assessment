@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Growth Architecture | MD SHAKIL HOSSAIN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Hind Siliguri', 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 20%);
+        }
+
+        /* Glassmorphism Classes */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .glass-header {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .gradient-text-gold {
+             background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Timeline Connector */
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(56, 189, 248, 0.2);
+            transform: translateX(-50%);
+        }
+
+        /* Print Specifics */
+        @media print {
+            body {
+                background-color: white;
+                color: black;
+                background-image: none;
+            }
+            .glass-card {
+                background: white;
+                border: 1px solid #ccc;
+                box-shadow: none;
+                color: black;
+                page-break-inside: avoid;
+            }
+            .no-print {
+                display: none;
+            }
+            .gradient-text, .gradient-text-gold {
+                background: none;
+                -webkit-text-fill-color: black;
+                color: black;
+                font-weight: bold;
+            }
+            .text-slate-300, .text-slate-400 {
+                color: #444 !important;
+            }
+             /* Ensure Bengali font prints correctly */
+            * {
+                font-family: 'Hind Siliguri', sans-serif !important;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-12">
+
+    <!-- Fixed Action Button -->
+    <div class="fixed bottom-6 right-6 z-50 no-print">
+        <button onclick="window.print()" class="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-full shadow-lg transition-all transform hover:scale-105 font-semibold">
+            <i data-lucide="printer"></i> পিডিএফ সেভ করুন
+        </button>
+    </div>
+
+    <!-- Header Section -->
+    <header class="pt-16 pb-12 px-6 text-center relative overflow-hidden">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <div class="inline-block px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-mono tracking-widest mb-4">
+                CONFIDENTIAL // SELF-ASSESSMENT
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-2 text-white font-['Inter']">
+                MD SHAKIL HOSSAIN
+            </h1>
+            <p class="text-xl text-slate-300 font-light tracking-wide mb-6">
+                <span class="text-blue-400 font-semibold">"ভুল শুধরে নিজেকে নতুন করে গড়ার ব্লুপ্রিন্ট"</span>
+            </p>
+            <div class="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+            
+            <p class="mt-8 text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed glass-card p-6 rounded-xl">
+                "এই ডকুমেন্টটি আমার ব্যক্তিগত এবং পেশাগত পরিবর্তনের <span class="text-white font-semibold">'অপারেটিং সিস্টেম (OS)'</span> হিসেবে কাজ করবে। এটি আমার দুর্বলতাগুলোকে আমার সবচেয়ে শক্তিশালী কৌশলগত সম্পদে পরিণত করবে।"
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- CORE RULES SECTION HEADER -->
+        <div class="md:col-span-2 mt-8 mb-4 border-b border-slate-700 pb-2">
+            <h2 class="text-2xl font-bold text-slate-200 tracking-wider uppercase">পার্ট ১: মাইন্ডসেট ও অপারেশন</h2>
+        </div>
+
+        <!-- 1. RADICAL TRANSPARENCY -->
+        <article class="glass-card rounded-2xl p-8 hover:border-blue-500/30 transition-colors group relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                <i data-lucide="shield-alert" size="80"></i>
+            </div>
+            <div class="flex items-center gap-3 mb-4">
+                <div class="p-3 bg-red-500/10 rounded-lg text-red-400">
+                    <i data-lucide="alert-triangle"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-white">স্বচ্ছতা প্রোটোকল</h2>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <p class="text-xs text-slate-500 uppercase tracking-wider font-bold mb-1">সমস্যা (Diagnosis)</p>
+                    <p class="text-slate-300 text-base">অভ্যাসগত মিথ্যা বলা এবং অজুহাত তৈরি করা।</p>
+                </div>
+                <div>
+                    <p class="text-xs text-blue-400 uppercase tracking-wider font-bold mb-1">ইমারসিভ সমাধান</p>
+                    <h3 class="text-xl font-bold gradient-text">"সত্য হলো এমন এক বিলাসিতা যা আমি বহন করতে পারি"</h3>
+                    <p class="text-slate-400 mt-2 text-base leading-relaxed">
+                        মিথ্যা বলা হলো দুর্বলতা। সত্য বলা হলো শক্তি। যখন আমি সত্য বলবো, আমার মনে কোনো ভয় থাকবে না।
+                    </p>
+                </div>
+                <div class="bg-black/30 p-4 rounded-lg border-l-4 border-blue-500 mt-4">
+                    <p class="text-sm text-white font-mono">
+                        <span class="text-blue-400">> অ্যাকশন:</span> কোনো ডেডলাইন মিস হলে সোজাসুজি বলবো: "আমার ভুল হয়েছে। আমি ঠিক করছি।" আর কোনো গল্প নয়।
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- 2. EXTERNAL BRAIN -->
+        <article class="glass-card rounded-2xl p-8 hover:border-purple-500/30 transition-colors group relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                <i data-lucide="cpu" size="80"></i>
+            </div>
+            <div class="flex items-center gap-3 mb-4">
+                <div class="p-3 bg-purple-500/10 rounded-lg text-purple-400">
+                    <i data-lucide="git-branch"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-white">এক্সটার্নাল ব্রেইন</h2>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <p class="text-xs text-slate-500 uppercase tracking-wider font-bold mb-1">সমস্যা (Diagnosis)</p>
+                    <p class="text-slate-300 text-base">স্ট্রাকচারাল স্ট্র্যাটেজিতে খেই হারিয়ে ফেলা।</p>
+                </div>
+                <div>
+                    <p class="text-xs text-purple-400 uppercase tracking-wider font-bold mb-1">ইমারসিভ সমাধান</p>
+                    <h3 class="text-xl font-bold gradient-text">"মনকে বিশ্বাস করবেন না, ডকুমেন্টকে বিশ্বাস করুন"</h3>
+                    <p class="text-slate-400 mt-2 text-base leading-relaxed">
+                        মস্তিষ্কের কাজ আইডিয়া তৈরি করা, জমা রাখা নয়। সব আইডিয়া সাথে সাথে কাগজে বা নোটপ্যাডে নামিয়ে ফেলতে হবে।
+                    </p>
+                </div>
+                <div class="bg-black/30 p-4 rounded-lg border-l-4 border-purple-500 mt-4">
+                    <p class="text-sm text-white font-mono">
+                        <span class="text-purple-400">> অ্যাকশন:</span> মাইন্ড ম্যাপ এবং SOP ব্যবহার করবো। একটি কাজ করার সময় অন্য কাজ নিয়ে ভাবা নিষিদ্ধ।
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- 3. HUNTER MINDSET -->
+        <article class="glass-card rounded-2xl p-8 hover:border-green-500/30 transition-colors group relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                <i data-lucide="target" size="80"></i>
+            </div>
+            <div class="flex items-center gap-3 mb-4">
+                <div class="p-3 bg-green-500/10 rounded-lg text-green-400">
+                    <i data-lucide="clock"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-white">শিকারি মানসিকতা</h2>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <p class="text-xs text-slate-500 uppercase tracking-wider font-bold mb-1">সমস্যা (Diagnosis)</p>
+                    <p class="text-slate-300 text-base">সময়ের সঠিক ধারণা না থাকা এবং আর্থিক চাপ।</p>
+                </div>
+                <div>
+                    <p class="text-xs text-green-400 uppercase tracking-wider font-bold mb-1">ইমারসিভ সমাধান</p>
+                    <h3 class="text-xl font-bold gradient-text">"চাপই আমার জ্বালানি"</h3>
+                    <p class="text-slate-400 mt-2 text-base leading-relaxed">
+                        টাকা নেই? ভালো। এই 'অভাব'টাই আমাকে দৌড়াতে বাধ্য করবে। এটা সমস্যা নয়, এটা আমার ড্রাইভ।
+                    </p>
+                </div>
+                <div class="bg-black/30 p-4 rounded-lg border-l-4 border-green-500 mt-4">
+                    <p class="text-sm text-white font-mono">
+                        <span class="text-green-400">> অ্যাকশন:</span> ডিপ ওয়ার্ক ব্লক। সকাল ১০টা - দুপুর ১টা (ফোন বন্ধ)।
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- 4. SCRIPTWRITER PROTOCOL -->
+        <article class="glass-card rounded-2xl p-8 hover:border-orange-500/30 transition-colors group relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                <i data-lucide="mic-2" size="80"></i>
+            </div>
+            <div class="flex items-center gap-3 mb-4">
+                <div class="p-3 bg-orange-500/10 rounded-lg text-orange-400">
+                    <i data-lucide="message-square"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-white">স্ক্রিপ্ট রাইটার</h2>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <p class="text-xs text-slate-500 uppercase tracking-wider font-bold mb-1">সমস্যা (Diagnosis)</p>
+                    <p class="text-slate-300 text-base">লো কনফিডেন্স এবং ট্র্যাকলেস আলোচনা।</p>
+                </div>
+                <div>
+                    <p class="text-xs text-orange-400 uppercase tracking-wider font-bold mb-1">ইমারসিভ সমাধান</p>
+                    <h3 class="text-xl font-bold gradient-text">"নীরবতাই শক্তি"</h3>
+                    <p class="text-slate-400 mt-2 text-base leading-relaxed">
+                        না জানলে চুপ থাকা ভালো। ভুল ভাল বলার চেয়ে ৫ সেকেন্ড পজ (Pause) নেওয়া অনেক বেশি স্মার্টনেস।
+                    </p>
+                </div>
+                <div class="bg-black/30 p-4 rounded-lg border-l-4 border-orange-500 mt-4">
+                    <p class="text-sm text-white font-mono">
+                        <span class="text-orange-400">> অ্যাকশন:</span> মিটিংয়ের আগে ৩টি বুলেট পয়েন্ট লিখে নিবো। ট্র্যাক হারিয়ে ফেললে ওই পয়েন্টগুলো দেখবো।
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- 5. PROFESSIONAL PRIDE -->
+        <article class="glass-card rounded-2xl p-8 hover:border-yellow-500/30 transition-colors group md:col-span-2 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                <i data-lucide="crown" size="100"></i>
+            </div>
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-3 bg-yellow-500/10 rounded-lg text-yellow-400">
+                            <i data-lucide="star"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-white">পেশাগত আত্মসম্মান (অহংকার নয়)</h2>
+                    </div>
+                    <p class="text-slate-300 text-base mb-4">
+                        <span class="text-red-400 font-bold">বাজে ইগো:</span> "আমি সব জানি।" <br>
+                        <span class="text-green-400 font-bold">ভালো গর্ব:</span> "আমি শাকিল, আমি নিম্নমানের কাজ করি না। কমিটমেন্ট ব্রেক করা আমার স্ট্যাটাসে যায় না।"
+                    </p>
+                    <p class="text-slate-400 text-sm">
+                        নিজের অহংকারকে 'কোয়ালিটি অ্যাস্যুরেন্স'-এ রূপান্তর করুন। আপনি অতটা সস্তা নন যে মিথ্যা বলবেন বা কাজ ফেলে রাখবেন।
+                    </p>
+                </div>
+                <div class="w-full md:w-1/3 bg-black/40 p-6 rounded-xl border border-yellow-500/20 text-center">
+                    <p class="text-xs text-yellow-500 uppercase font-bold mb-2">ডিরেক্টরের মূলনীতি</p>
+                    <p class="text-white font-serif italic text-lg">"শ্রেষ্ঠত্ব কোনো কাজ নয়, এটি একটি অভ্যাস।"</p>
+                </div>
+            </div>
+        </article>
+        
+        <!-- NEW ADDITIONS HEADER -->
+        <div class="md:col-span-2 mt-8 mb-4 border-b border-slate-700 pb-2">
+            <h2 class="text-2xl font-bold text-slate-200 tracking-wider uppercase">পার্ট ২: অ্যাডভান্সড ফোকাস ও ৬ মাসের মিশন</h2>
+        </div>
+
+        <!-- 6. COMMUNICATION INTEGRITY (New Rule) -->
+        <article class="glass-card rounded-2xl p-8 hover:border-cyan-500/30 transition-colors group relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                <i data-lucide="message-circle" size="80"></i>
+            </div>
+            <div class="flex items-center gap-3 mb-4">
+                <div class="p-3 bg-cyan-500/10 rounded-lg text-cyan-400">
+                    <i data-lucide="check-check"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-white">যোগাযোগের পবিত্রতা</h2>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <p class="text-xs text-cyan-400 uppercase tracking-wider font-bold mb-1">ইমারসিভ ফোকাস রুল</p>
+                    <h3 class="text-xl font-bold gradient-text">"কোনো ঘোল খাওয়ানো চলবে না"</h3>
+                    <p class="text-slate-400 mt-2 text-base leading-relaxed">
+                        কাউকে ঝুলে রাখা বা মেসেজের রিপ্লাই না দেওয়া আত্মসম্মানবোধের অভাব। হয় "হ্যাঁ" বলবো, না হয় "না" বলবো। কিন্তু "দেখছি" বলে ঘোরাবো না।
+                    </p>
+                </div>
+                <div class="bg-black/30 p-4 rounded-lg border-l-4 border-cyan-500 mt-4">
+                    <p class="text-sm text-white font-mono">
+                        <span class="text-cyan-400">> পলিসি:</span> সব মেসেজের রিপ্লাই ২৪ ঘণ্টার মধ্যে দেব। কাজ না হলে "না" বলে দেব, কিন্তু কাউকে ইগনোর করবো না।
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- 7. THE LEARNING DIRECTOR (New Rule) -->
+        <article class="glass-card rounded-2xl p-8 hover:border-pink-500/30 transition-colors group relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                <i data-lucide="book-open" size="80"></i>
+            </div>
+            <div class="flex items-center gap-3 mb-4">
+                <div class="p-3 bg-pink-500/10 rounded-lg text-pink-400">
+                    <i data-lucide="trending-up"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-white">দ্য লার্নিং ডিরেক্টর</h2>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <p class="text-xs text-pink-400 uppercase tracking-wider font-bold mb-1">ইমারসিভ ফোকাস রুল</p>
+                    <h3 class="text-xl font-bold gradient-text">"ইনপুট ভালো হলে, আউটপুট ভালো হবে"</h3>
+                    <p class="text-slate-400 mt-2 text-base leading-relaxed">
+                        আমার ব্রেইন যদি নতুন তথ্য না পায়, তাহলে বিজনেস গ্রো করবে না। পজিটিভ থাকতে হলে আমাকে পজিটিভ কন্টেন্ট গিলতে হবে।
+                    </p>
+                </div>
+                <div class="bg-black/30 p-4 rounded-lg border-l-4 border-pink-500 mt-4">
+                    <p class="text-sm text-white font-mono">
+                        <span class="text-pink-400">> রুটিন:</span> প্রতিদিন রাতে ঘুমানোর আগে ২০ মিনিট বিজনেস স্ট্র্যাটেজি বা ইসলামিক তাফসির পড়বো/শুনবো। নো রিলস/টিকটক।
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <!-- 8. CEO MORNING (New Rule) -->
+        <article class="glass-card rounded-2xl p-8 hover:border-teal-500/30 transition-colors group relative overflow-hidden md:col-span-2">
+            <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                <i data-lucide="sun" size="100"></i>
+            </div>
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                 <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-3 bg-teal-500/10 rounded-lg text-teal-400">
+                            <i data-lucide="coffee"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-white">সিইও মর্নিং (CEO Morning)</h2>
+                    </div>
+                    <p class="text-slate-300 text-base mb-4">
+                        দিনের শুরুটা যদি অগোছালো হয়, পুরো দিনটাই নষ্ট হয়। সকালে উঠেই ফোন চেক করা "চাকরদের" অভ্যাস, মালিকদের নয়।
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+                        <div class="bg-slate-800/50 p-3 rounded border border-teal-500/20">
+                            <span class="text-teal-400 font-bold block text-xs mb-1">DO</span>
+                            <span class="text-slate-300 text-sm">নামাজ পড়া, দিনের পরিকল্পনা দেখা, এক গ্লাস পানি খাওয়া।</span>
+                        </div>
+                        <div class="bg-slate-800/50 p-3 rounded border border-red-500/20">
+                            <span class="text-red-400 font-bold block text-xs mb-1">DON'T</span>
+                            <span class="text-slate-300 text-sm">বিছানায় শুয়ে সোশ্যাল মিডিয়া স্ক্রল করা। এটা ব্রেইনকে অলস করে দেয়।</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </main>
+    
+    <!-- 6 MONTH ROADMAP SECTION -->
+    <section class="max-w-5xl mx-auto px-6 mt-16">
+        <div class="glass-header rounded-t-2xl p-6 border-b border-white/10 text-center">
+            <h2 class="text-3xl font-bold text-white uppercase tracking-widest">৬ মাসের ট্রান্সফরমেশন রোডম্যাপ</h2>
+            <p class="text-slate-400 mt-2">আগামী ১৮০ দিন যেভাবে নিজেকে গড়বো</p>
+        </div>
+        
+        <div class="glass-card rounded-b-2xl p-8 relative overflow-hidden">
+             <!-- Vertical Line for Desktop -->
+            <div class="hidden md:block timeline-line"></div>
+
+            <div class="space-y-12 relative z-10">
+                
+                <!-- Phase 1 -->
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="w-full md:w-1/2 text-center md:text-right pr-0 md:pr-12">
+                        <h3 class="text-2xl font-bold text-blue-400">মাস ১-২: ডিটক্স ও ফাউন্ডেশন</h3>
+                        <p class="text-slate-400 text-sm mt-2">খারাপ অভ্যাস বাদ দেওয়া এবং সত্য বলার প্র্যাকটিস।</p>
+                    </div>
+                    <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold border-4 border-slate-900 shrink-0 z-20 shadow-lg shadow-blue-500/50">১</div>
+                    <div class="w-full md:w-1/2 bg-slate-800/50 p-6 rounded-xl border border-blue-500/20 hover:border-blue-500/50 transition-colors">
+                        <ul class="text-slate-300 text-sm space-y-2">
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400 mt-1"></i> ৭ দিনের "No Lie" চ্যালেঞ্জ সম্পূর্ণ করা।</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400 mt-1"></i> প্রতিদিনের কাজের লিস্ট (To-Do) লেখার অভ্যাস তৈরি।</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400 mt-1"></i> ঘুমের রুটিন ফিক্স করা (রাত ২টার আগে ঘুমানো)।</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="flex flex-col md:flex-row-reverse items-center gap-8">
+                    <div class="w-full md:w-1/2 text-center md:text-left pl-0 md:pl-12">
+                        <h3 class="text-2xl font-bold text-purple-400">মাস ৩-৪: এক্সিকিউশন ও স্কিল</h3>
+                        <p class="text-slate-400 text-sm mt-2">ফোকাস দিয়ে কাজ শেষ করা এবং স্কিল বাড়ানো।</p>
+                    </div>
+                    <div class="w-12 h-12 rounded-full bg-purple-600 flex items-center justify-center text-white font-bold border-4 border-slate-900 shrink-0 z-20 shadow-lg shadow-purple-500/50">২</div>
+                    <div class="w-full md:w-1/2 bg-slate-800/50 p-6 rounded-xl border border-purple-500/20 hover:border-purple-500/50 transition-colors">
+                        <ul class="text-slate-300 text-sm space-y-2">
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400 mt-1"></i> ডিপ ওয়ার্ক সেশন (টানা ৩ ঘণ্টা কাজ) চালু করা।</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400 mt-1"></i> টেকনিক্যাল বা বিজনেস নলেজ বাড়ানোর জন্য বই/কোর্স।</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400 mt-1"></i> আর্থিক চাপকে শক্তিতে রূপান্তর করে ইনকাম সোর্স বাড়ানো।</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="w-full md:w-1/2 text-center md:text-right pr-0 md:pr-12">
+                        <h3 class="text-2xl font-bold gradient-text-gold">মাস ৫-৬: অথরিটি ও লিডারশিপ</h3>
+                        <p class="text-slate-400 text-sm mt-2">একজন সম্মানিত ও আত্মবিশ্বাসী ব্যক্তিত্ব হিসেবে আত্মপ্রকাশ।</p>
+                    </div>
+                    <div class="w-12 h-12 rounded-full bg-yellow-600 flex items-center justify-center text-white font-bold border-4 border-slate-900 shrink-0 z-20 shadow-lg shadow-yellow-500/50">৩</div>
+                    <div class="w-full md:w-1/2 bg-slate-800/50 p-6 rounded-xl border border-yellow-500/20 hover:border-yellow-500/50 transition-colors">
+                        <ul class="text-slate-300 text-sm space-y-2">
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-yellow-400 mt-1"></i> কথা বলার সময় পূর্ণ আত্মবিশ্বাস ও স্বচ্ছতা বজায় রাখা।</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-yellow-400 mt-1"></i> টিম এবং ক্লায়েন্টদের কাছে ট্রাস্টেড পার্টনার হওয়া।</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-yellow-400 mt-1"></i> নিজের ভিশন এবং কোম্পানির গ্রোথ চোখের সামনে দেখা।</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenge Section -->
+    <section class="max-w-4xl mx-auto px-6 mt-16 mb-20">
+        <div class="glass-card rounded-2xl p-1 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600">
+            <div class="bg-slate-900 rounded-xl p-8 text-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+                
+                <h2 class="text-3xl font-bold text-white mb-2 relative z-10">প্রথম ৭ দিনের চ্যালেঞ্জ</h2>
+                <p class="text-blue-300 mb-8 relative z-10">আজ থেকেই শুরু (ফাউন্ডেশন সপ্তাহ)</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10 text-left">
+                    <div class="flex items-start gap-3">
+                        <i data-lucide="check-circle" class="text-green-500 shrink-0 mt-1"></i>
+                        <p class="text-slate-300">আগামী ৭ দিন, জিরো মিথ্যা। এমনকি কষ্ট হলেও। (চরম স্বচ্ছতা)</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i data-lucide="check-circle" class="text-green-500 shrink-0 mt-1"></i>
+                        <p class="text-slate-300">প্রতি রাতে পরের দিনের জন্য "To-Do List" লিখবো।</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i data-lucide="check-circle" class="text-green-500 shrink-0 mt-1"></i>
+                        <p class="text-slate-300">সকালে উঠেই ফোন ধরবো না (নামাজ ও প্ল্যানিং আগে)।</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i data-lucide="check-circle" class="text-green-500 shrink-0 mt-1"></i>
+                        <p class="text-slate-300">মেসেজের রিপ্লাই ঝুলিয়ে রাখবো না (হ্যাঁ অথবা না)।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center text-slate-600 text-sm pb-8">
+        <p>আপনার পার্সোনাল ভার্চুয়াল অ্যাসিস্ট্যান্ট দ্বারা প্রস্তুতকৃত | © ২০২৬</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
